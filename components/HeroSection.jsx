@@ -1,6 +1,7 @@
+import Link from "next/link";
 export default function HeroSection() {
     return (
-        <div className="flex items-center justify-center h-screen bg-gray-800">
+        
         <div className="text-center">
             <h1 className="text-4xl font-bold text-white">
             Welcome to <span className="text-blue-400">Next.js</span>
@@ -11,8 +12,7 @@ export default function HeroSection() {
                 pages/index.js
             </code>
             </p>
-            <Link href="/product">
-        </div>
+            <Link href="/product" />
         </div>
     );
     }
