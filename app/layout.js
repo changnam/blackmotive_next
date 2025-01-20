@@ -1,5 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -22,9 +24,9 @@ export default function RootLayout({ children }) {
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
-       <div> 헤더영역입니다다</div>
+        <Header/> 
         {children}
-        <div className="flex items-center"> 푸터영역입니다다</div>
+        <Footer/> 
       </body>
     </html>
   );
