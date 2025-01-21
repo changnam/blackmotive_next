@@ -108,6 +108,7 @@ export async function getHomePageData() {
           locale: null,
           header: {
             id: 2,
+            ctaButton: { id: 11, url: '/login', text: 'Login', isExternal: false },
             searchButton: { id: 11, url: '#', text: 'Search', isExternal: false },
             accountButton: { id: 11, url: '/account', text: 'Account', isExternal: false },
             cartButton: { id: 11, url: '/cart', text: 'Cart', isExternal: false },
