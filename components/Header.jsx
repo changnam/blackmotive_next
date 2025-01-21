@@ -1,26 +1,18 @@
-import Announcement from "@/components/Announcement";
 import Link from "next/link";
-import Image from "next/image";
+import { Logo } from "@/components/Logo";
+import { Button } from "@/components/ui/button";
 
-export default function Header() {
-    return (
-        <>
-        <Announcement/>
-        <header className="flex items-center justify-between p-4 bg-gray-800">
-            <nav>
-                <ul className="flex space-x-4 text-white">
-                    <li>
-                        <Link href="/">Home</Link>
-                    </li>
-                    <li>
-                        <Link href="/catalog">Catalog</Link>
-                    </li>
-                    <li>
-                        <Link href="/contact">Contact</Link>
-                    </li>
-                </ul>
-            </nav>
-        </header>
-        </>
-    );
+
+export async function Header({ data }) {
+  const { logoText, searchButton, accountButton, cartButton } = data;
+  return (
+    <div className="flex items-center justify-between px-4 py-3 bg-white shadow-md dark:bg-gray-800">
+      <Logo text={logoText.text}/>
+      <div className="flex items-center gap-4">
+        <Link href={searchButton.url}><Button>{searchButton.text}</Button></Link>
+        <Link href={accountButton.url}><Button>{accountButton.text}</Button></Link>
+        <Link href={cartButton.url}><Button>{cartButton.text}</Button></Link>
+      </div>
+    </div>
+  );
 }
