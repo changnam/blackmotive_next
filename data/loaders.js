@@ -116,7 +116,7 @@ export async function getHomePageData() {
           },
           footer: {
             id: 2,
-            text: 'Made with love by Paul',
+            text: 'Made by honsoft',
             socialLink: [
               {
                 id: 13,
@@ -132,12 +132,12 @@ export async function getHomePageData() {
               },
               {
                 id: 15,
-                url: 'www.linkedin.com',
-                text: 'LinkedIn',
+                url: 'www.github.com',
+                text: 'github',
                 isExternal: true
               }
             ],
-            logoText: { id: 12, url: '/', text: 'Summarize AI', isExternal: false }
+            logoText: { id: 12, url: '/', text: 'Black Motiv', isExternal: false }
           }
         },
         meta: {}

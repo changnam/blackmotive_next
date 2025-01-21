@@ -1,7 +1,7 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import {Header} from "@/components/Header";
-import Footer from "@/components/Footer";
+import {Footer} from "@/components/Footer";
 import { getGlobalData } from "@/data/loaders";
 import Announcement from "@/components/Announcement";
 
@@ -32,7 +32,7 @@ export default async function RootLayout({ children }) {
         <Announcement/>
         <Header data={globalData.data.header} /> 
         {children}
-        <Footer/> 
+        <Footer data={globalData.data.footer}/> 
       </body>
     </html>
   );
