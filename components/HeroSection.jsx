@@ -1,30 +1,46 @@
 import Link from "next/link";
-export default function HeroSection({data}) {
+import ShopifyImage from "@/components/ShopifyImage";
+
+export function HeroSection({data}) {
+    console.dir(data, { depth: null });
+    data = {
+        heading: "Welcome to our store",
+        subHeading: "Shop the latest our coffees",
+        image: {
+            url: "/uploads/blackmotiv.jpg",
+            alternativeText: "A coffee description",
+        },
+        link: {
+            url: "/collections",
+            text: "Shop all",
+        },
+    };
+    const { heading, subHeading, image, link } = data;
+    const imageURL = "" + image.url;
+  
     return (
-        
-        <header className="relative h-[600px] overflow-hidden">
-            <img
-                alt="Background"
-                className="absolute inset-0 object-cover w-full h-full"
-                height={1080}
-                src="/blackmotiv.jpg"
-                style={{
-                aspectRatio: "1920/1080",
-                objectFit: "cover",
-                }}
-                width={1920}
-            />
-            <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-20">
-                <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
-                Browse our latest products
-                </h1>
-                <Link
-                className="mt-8 inline-flex items-center justify-center px-6 py-3 text-base font-medium text-black bg-white rounded-md shadow hover:bg-gray-100"
-                href="/collections"
-                >
-                Shop all
-                </Link>
-            </div>
-            </header>
+      <header className="relative h-[600px] overflow-hidden">
+        <ShopifyImage
+            alt={image.alternativeText ?? "no alternative text"}
+            className="absolute inset-0 object-cover w-full h-full aspect/16:9"
+            src={image.url}
+            height={1080}
+            width={1920}
+        />
+        <div className="relative z-10 flex flex-col items-center justify-center h-full text-center text-white bg-black bg-opacity-40">
+          <h1 className="text-4xl font-bold md:text-5xl lg:text-6xl">
+            {heading}
+          </h1>
+          <p className="mt-4 text-lg md:text-xl lg:text-2xl">
+            {subHeading}
+          </p>
+          <Link
+            className="mt-8 inline-flex items-center justify-center px-6 py-3 text-base font-medium text-black bg-white rounded-md shadow hover:bg-gray-100"
+            href={link.url}
+          >
+            {link.text}
+          </Link>
+        </div>
+      </header>
     );
     }
