@@ -108,8 +108,9 @@ export async function getHomePageData() {
           locale: null,
           header: {
             id: 2,
-            ctaButton: { id: 11, url: '/login', text: 'Login', isExternal: false },
-            searchButton: { id: 11, url: '#', text: 'Search', isExternal: false },
+            loginButton: { id: 11, url: '/login', text: 'Login', isExternal: false },
+            ctaButton: { id: 11, url: '/signin', text: 'Signin', isExternal: false },
+            searchButton: { id: 11, url: '/#', text: 'Search', isExternal: false },
             accountButton: { id: 11, url: '/account', text: 'Account', isExternal: false },
             cartButton: { id: 11, url: '/cart', text: 'Cart', isExternal: false },
             logoText: { id: 10, url: '/', text: 'Black Motiv', isExternal: false }
