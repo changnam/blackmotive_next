@@ -10,7 +10,7 @@ export async function Header({ data }) {
       <Logo text={logoText.text}/>
       <div className="flex items-center gap-4">
         <Link href={loginButton.url}><Button>{loginButton.text}</Button></Link>
-        <Link href={ctaButton.url}><Button>{ctaButton.text}</Button></Link>
+        <Link href={ctaButton.url} className="pointer-events-none"><Button disabled>{ctaButton.text}</Button></Link>
         <Link href={searchButton.url}><Button>{searchButton.text}</Button></Link>
         <Link href={accountButton.url}><Button>{accountButton.text}</Button></Link>
         <Link href={cartButton.url}><Button>{cartButton.text}</Button></Link>
